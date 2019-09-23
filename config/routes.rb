@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root to: 'tops#index'
 
   get '/users/:id', to: 'users#show', as: 'user'
+  #get '/users/edit/:id', to: 'users#edit', as: 'edit_user'
 
   resources :posts, only: %i(new create show destroy) do
     resources :photos, only: %i(create)

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new]
 
   def new
     @post = Post.new
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     else
       flash[:alert] = "投稿の削除に失敗しました"
     end
-    redirect_to root_path
+    redirect_to tops_index_path
   end
 
   private

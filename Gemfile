@@ -49,6 +49,10 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+
+gem 'rails-i18n'
