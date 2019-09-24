@@ -1,7 +1,10 @@
+
+  <div class="photos-parent text-center">
 <% @posts.each do |post| %>
   <%= link_to(post_path(post)) do %>
-    <span class="photos-index">
-      <%= image_tag post.photos.first.image.url(:medium) %>
-    </span>
+      <div class="photos-children">
+    <%= image_tag post.photos.first.image.url(:medium) %>
+      </div>
   <% end %>
 <% end %>
+  </div>

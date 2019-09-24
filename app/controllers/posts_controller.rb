@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+
   end
 
   def destroy
@@ -36,5 +37,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:caption, photos_attributes: [:image]).merge(user_id: current_user.id)
+  end
+
+  def user_params
+    params.require(:user).permit(:image)
   end
 end

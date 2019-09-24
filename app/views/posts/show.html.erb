@@ -1,3 +1,4 @@
+<div class="container">
 <div class="col-md-10 col-md-offset-1 mx-auto">
   <div class="row">
     <div class="col-md-8">
@@ -8,25 +9,27 @@
     <div class="col-md-4">
       <div class="card-right mt-3">
         <div class="post-title text-center"><h3><%= @post.caption %></h3></div>
-        <% if user_signed_in? %>
-        <% if @post.user_id == current_user.id %>
-        <%= link_to post_path(@post), method: :delete, class: "btn btn-danger ml-auto mx-0 my-auto" do %>
+          <% if user_signed_in? %>
+            <% if @post.user_id == current_user.id %>
+              <%= link_to post_path(@post), method: :delete, class: "btn btn-danger ml-auto mx-0 my-auto" do %>
         <div>画像削除</div>
-        <% end %>
-        <% end %>
+            <% end %>
+          <% end %>
         <hr>
+        <%#= image_tag @user.image.thumb.url, class: "round-img" %>
         <h5 class="text-center">投稿ユーザー</h5>
         <div class="text-center post-user">
           <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
-          <%= image_tag avatar_url(@post.user), class: "post-profile-icon" %>
+
           <% end %>
           <%= link_to user_path(@post.user), class: "black-color no-text-decoration post-user-name",
           title: @post.user.name do %>
           <strong> <%= @post.user.name %></strong>
           <% end %>
-          <% end %>
+        <% end %>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
