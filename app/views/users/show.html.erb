@@ -10,11 +10,13 @@
     <% else %>
       <%= image_tag "/assets/default.jpg", class: "round-img" %>
     <% end %>
+  <% if @user == current_user %>
     <button type="button" class="btn btn-outline-secondary rounded-pill mt-3">
       <%= f.file_field :image, accept: 'image/jpg,image/gif,image/png' %>
     </button>
     <%= f.submit 'プロフィール画像変更', class: 'btn btn-secondary mt-3' %>
     <% end %>
+  <% end %>
 
   </div>
   <div class="col-lg-6 text-center profile-text mb-3">

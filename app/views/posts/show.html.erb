@@ -12,21 +12,28 @@
           <% if user_signed_in? %>
             <% if @post.user_id == current_user.id %>
               <%= link_to post_path(@post), method: :delete, class: "btn btn-danger ml-auto mx-0 my-auto" do %>
-        <div>画像削除</div>
+              <div>画像削除</div>
+              <% end %>
             <% end %>
           <% end %>
-        <hr>
-        <%#= image_tag @user.image.thumb.url, class: "round-img" %>
-        <h5 class="text-center">投稿ユーザー</h5>
-        <div class="text-center post-user">
-          <%= link_to user_path(@post.user), class: "no-text-decoration" do %>
+          <hr>
 
-          <% end %>
-          <%= link_to user_path(@post.user), class: "black-color no-text-decoration post-user-name",
+        <h5 class="text-center m-3">投稿ユーザー</h5>
+          <div class="text-center post-user">
+            <%= link_to user_path(@post.user) do %>
+              <% if @user.image? %>
+                <%= image_tag @user.image.thumb.url, class: "round-img" %>
+              <% else %>
+                <%= image_tag "/assets/default.jpg", class: "round-img" %>
+              <% end %>
+            <% end %>
+          <br>
+          <div class="m-3">
+            <%= link_to user_path(@post.user), class: "black-color no-text-decoration post-user-name",
           title: @post.user.name do %>
           <strong> <%= @post.user.name %></strong>
-          <% end %>
-        <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
