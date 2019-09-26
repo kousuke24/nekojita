@@ -19,13 +19,11 @@
           <hr>
 
         <h5 class="text-center m-3">投稿ユーザー</h5>
-          <div class="text-center post-user">
-            <%= link_to user_path(@post.user) do %>
-              <% if @user.image? %>
-                <%= image_tag @user.image.thumb.url, class: "round-img" %>
-              <% else %>
-                <%= image_tag "/assets/default.jpg", class: "round-img" %>
-              <% end %>
+        <div class="text-center post-user">
+            <% if @user.image? %>
+              <%= image_tag @user.image.thumb.url, class: "round-img" %>
+            <% else %>
+              <%= image_tag "/assets/default.jpg", class: "round-img" %>
             <% end %>
           <br>
           <div class="m-3">
