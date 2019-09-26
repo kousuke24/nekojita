@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   #get 'twitters/index'
 
   devise_for :users,
-    controllers: { registrations: 'registrations' }
-    #controllers: { omniauth_callbacks: 'users/omniauth_callbacks' },
+    controllers: { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
 
   get 'tops/index'
   root to: 'tops#index'

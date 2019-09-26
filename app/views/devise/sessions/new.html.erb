@@ -19,8 +19,14 @@
   <% end %>
 
   <div class="actions form-group col-sm-6 offset-sm-3">
-    <%= f.submit "ログイン", class: "btn btn-primary form-control" %>
+    <%= f.submit "ログイン", class: "btn btn-success form-control" %>
   </div>
   <% end %>
-</div>
+  <div class="actions form-group col-sm-6 offset-sm-3">
+    <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-primary form-control" do %>
+      <i class="fab fa-twitter"></i>
+      Twitterログイン
+    <% end %>
+  </div>
+  </div>
 </div>
