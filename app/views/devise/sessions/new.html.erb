@@ -1,32 +1,43 @@
 <div class="container">
-<h3 class="text-center text-secondary form-group">ログイン</h3>
+  <h3 class="text-center text-secondary form-group">ログイン</h3>
 
-<div class="card-header">
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field form-group mt-3 text-center col-sm-6 offset-sm-3">
-    <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", autocomplete: "email", class: "form-control" %>
-  </div>
+  <div class="card-header">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-  <div class="field form-group text-center col-sm-6 offset-sm-3">
-    <%= f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class: "form-control"  %>
-  </div>
+      <div class="field form-group mt-3 text-center col-sm-6 offset-sm-3">
+        <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", autocomplete: "email", class: "form-control" %>
+      </div>
 
-  <% if devise_mapping.rememberable? %>
-  <div class="field col-sm-6 offset-sm-3">
-    <%= f.check_box :remember_me %>
-    <%= f.label :ログイン情報を保存する %>
-  </div>
-  <% end %>
+      <div class="field form-group text-center col-sm-6 offset-sm-3">
+        <%= f.password_field :password, placeholder: "パスワード", autocomplete: "current-password", class: "form-control"  %>
+      </div>
 
-  <div class="actions form-group col-sm-6 offset-sm-3">
-    <%= f.submit "ログイン", class: "btn btn-success form-control" %>
-  </div>
-  <% end %>
-  <div class="actions form-group col-sm-6 offset-sm-3">
-    <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-primary form-control" do %>
-      <i class="fab fa-twitter"></i>
-      Twitterログイン
+      <% if devise_mapping.rememberable? %>
+      <div class="field col-sm-6 offset-sm-3">
+        <%= f.check_box :remember_me %>
+        <%= f.label :ログイン情報を保存する %>
+      </div>
+      <% end %>
+
+      <div class="actions form-group col-sm-6 offset-sm-3">
+        <%= f.submit "ログイン", class: "btn btn-success form-control" %>
+      </div>
     <% end %>
+
+      <div class="actions form-group col-sm-6 offset-sm-3">
+        <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-primary form-control" do %>
+          <i class="fab fa-twitter"></i>
+          Twitterログイン
+        <% end %>
+      </div>
+
+      <div class="actions form-group col-sm-6 offset-sm-3">
+        <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-facebook form-control" do %>
+          <i class="fab fa-facebook-f"></i>
+          FaceBookログイン
+        <% end %>
+      </div>
+
   </div>
-  </div>
+
 </div>

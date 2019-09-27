@@ -1,16 +1,15 @@
-
-  <div class="photos-parent text-center">
-<% @posts.each do |post| %>
-  <%= link_to(post_path(post)) do %>
+<div class="photos-parent text-center">
+  <% @posts.each do |post| %>
+    <%= link_to(post_path(post)) do %>
       <div class="photos-children">
-    <%= image_tag post.photos.first.image.url(:medium) %>
+        <%= image_tag post.photos.first.image.url(:medium) %>
       </div>
+    <% end %>
   <% end %>
-<% end %>
-  </div>
+</div>
 
-  <div class="paginate-parent">
-    <div class="paginate-children">
-      <%= paginate @posts %>
-    </div>
+<div class="paginate-parent">
+  <div class="paginate-children">
+    <%= paginate @posts %>
   </div>
+</div>

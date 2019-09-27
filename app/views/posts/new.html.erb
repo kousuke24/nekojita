@@ -1,20 +1,21 @@
 <div class="container">
-<h3 class="text-center text-secondary form-group">投稿</h3>
+  <h3 class="text-center text-secondary form-group">投稿</h3>
 
-<div class="card-header">
-  <%= form_with model: @post do |f| %>
-  <div class="field form-group mt-2 col-sm-6 offset-sm-3">
-    <%= f.label :タイトル, class: "text-left" %>
-    <%= f.text_field :caption, class: "form-control" %>
-  </div>
-  <div class="field form-group col-sm-6 offset-sm-3">
-    <%= f.fields_for :photos do |i| %>
-    <%= i.file_field :image %>
-    <% end %>
-  </div>
-  <div class="field form-group col-sm-6 offset-sm-3">
-    <%= f.submit "投稿", class: "btn btn-secondary form-control" %>
-  </div>
-  <% end %>
-</div>
+    <div class="card-header">
+      <%= form_with model: @post do |f| %>
+      <div class="field form-group mt-2 col-sm-6 offset-sm-3">
+        <%= f.label :タイトル, class: "text-left" %>
+        <%= f.text_field :caption, class: "form-control" %>
+      </div>
+      <div class="field form-group col-sm-6 offset-sm-3">
+        <%= f.fields_for :photos do |i| %>
+        <%= i.file_field :image %>
+        <% end %>
+      </div>
+      <div class="field form-group col-sm-6 offset-sm-3">
+        <%= f.submit "投稿", class: "btn btn-secondary form-control" %>
+      </div>
+      <% end %>
+    </div>
+    
 </div>

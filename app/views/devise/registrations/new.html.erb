@@ -1,33 +1,46 @@
-<h3 class="text-center text-secondary form-group">会員登録</h3>
+<div class="container">
+  <h3 class="text-center text-secondary form-group">会員登録</h3>
 
-<div class="card-header">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="card-header">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field form-group mt-3 text-center col-sm-6 offset-sm-3">
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名", class: "form-control" %>
-  </div>
+      <div class="field form-group mt-3 text-center col-sm-6 offset-sm-3">
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "ユーザー名", class: "form-control" %>
+      </div>
 
-  <div class="field form-group text-center col-sm-6 offset-sm-3">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
-  </div>
+      <div class="field form-group text-center col-sm-6 offset-sm-3">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
+      </div>
 
-  <div class="field form-group text-center col-sm-6 offset-sm-3">
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "form-control" %>
-  </div>
+      <div class="field form-group text-center col-sm-6 offset-sm-3">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "form-control" %>
+      </div>
 
-  <div class="field form-group text-center col-sm-6 offset-sm-3">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "form-control" %>
-  </div>
+      <div class="field form-group text-center col-sm-6 offset-sm-3">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認", class: "form-control" %>
+      </div>
 
-  <div class="actions form-group col-sm-6 offset-sm-3">
-    <%= f.submit "会員登録", class: "btn btn-success form-control" %>
-  </div>
-  <% end %>
-  <div class="actions form-group col-sm-6 offset-sm-3">
-    <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-primary form-control" do %>
-      <i class="fab fa-twitter"></i>
-      Twitter会員登録
-    <% end %>
-  </div>
+      <div class="actions form-group col-sm-6 offset-sm-3">
+        <%= f.submit "会員登録", class: "btn btn-success form-control" %>
+      </div>
+
+
+      <div class="actions form-group col-sm-6 offset-sm-3">
+        <%= link_to user_twitter_omniauth_authorize_path, class: "btn btn-primary form-control" do %>
+          <i class="fab fa-twitter"></i>
+          Twitter会員登録
+        <% end %>
+      </div>
+
+      <div class="actions form-group col-sm-6 offset-sm-3">
+        <%= link_to user_facebook_omniauth_authorize_path, class: "btn btn-facebook form-control" do %>
+        <i class="fab fa-facebook-f"></i>
+          FaceBook会員登録
+        <% end %>
+      </div>
+
+      <% end %>
+    </div>
+
 </div>

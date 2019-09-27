@@ -12,7 +12,11 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="css/carousel.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
+    <link rel="stylesheet" href="bootstrap-social.css" >
+
+
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -26,7 +30,7 @@
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/flash' %>
 
-      <%= yield %>
+    <%= yield %>
 
     <%= render 'layouts/footer' %>
   </body>

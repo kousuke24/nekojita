@@ -59,6 +59,7 @@ gem 'rails-i18n'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 gem 'dotenv-rails'
 
