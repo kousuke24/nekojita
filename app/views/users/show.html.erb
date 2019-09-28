@@ -24,4 +24,22 @@
         <br>
     <% end %>
   </div>
+  <hr>
+
+</div>
+
+<div class="photos-parent text-center">
+  <% @post.each do |post| %>
+    <%= link_to(post_path(post)) do %>
+      <div class="photos-children">
+        <%= image_tag post.photos.first.image.url(:medium) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="paginate-parent">
+  <div class="paginate-children mt-3">
+    <%= paginate @post %>
+  </div>
 </div>

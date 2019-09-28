@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
+    @post = @user.posts.order(id: "DESC").page(params[:page]).per(9)
   end
 
   def edit
