@@ -3,8 +3,9 @@ Rails.application.routes.draw do
     controllers: { registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: 'tops#index'
+  get 'tops/show', to: 'tops#show'
 
-  get '/users/:id', to: 'users#show', as: 'user'
+  get '/users/:id', to: 'users#show', as: :user
   patch '/users/:id', to: 'users#update'
 
   resources :posts, only: %i(new create show destroy) do

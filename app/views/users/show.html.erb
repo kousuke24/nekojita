@@ -1,32 +1,27 @@
 <div class="container">
   <h3 class="text-center text-secondary mb-4">ユーザー情報</h3>
 
-  <div class="row col-lg-6 offset-lg-3">
-    <div class="offset-lg-2 col-lg-4 text-center profile-image mb-3">
-
+  <div class="offset-sm-3 col-sm-6">
+    <div class="offset-sm-3 col-sm-6 text-center">
+      <h4 class="mb-3"><%= @user.name %></h4>
       <%= form_for(@user) do |f| %>
         <% if @user.image? %>
           <%= image_tag @user.image.thumb.url, class: "round-img" %>
         <% else %>
           <%= image_tag "/assets/default.jpg", class: "round-img" %>
         <% end %>
-
-        <% if @user == current_user %>
-          <button type="button" class="btn btn-outline-secondary rounded-pill mt-3">
-            <%= f.file_field :image, accept: 'image/jpg,image/gif,image/png' %>
-          </button>
-          <%= f.submit 'プロフィール画像変更', class: 'btn btn-secondary mt-3' %>
-        <% end %>
-      <% end %>
-
-    </div>
-    <div class="col-lg-6 text-center profile-text mb-3">
-      <h3><%= @user.name %></h3>
-        <% if @user == current_user %>
-          <p><%= @user.email %></p>
-          <%= link_to "プロフィール編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" %>
-        <% end %>
     </div>
   </div>
-  
+
+  <div class="offset-sm-4 col-sm-4 offset-sm-4 text-center">
+        <% if @user == current_user %>
+        <button type="button" class="btn btn-outline-secondary rounded-pill mt-3">
+          <%= f.file_field :image, accept: 'image/jpg,image/gif,image/png' %>
+        </button>
+          <%= f.submit 'プロフィール画像変更', class: 'btn btn-outline-dark mt-1 form-control' %>
+          <%= link_to "登録情報編集", edit_user_registration_path, class: "btn btn-secondary mt-3 form-control" %>
+        <% end %>
+        <br>
+    <% end %>
+  </div>
 </div>

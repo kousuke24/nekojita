@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     else
       flash[:alert] = "投稿の削除に失敗しました"
     end
-    redirect_to tops_index_path
+    redirect_to root_path
   end
 
   private
