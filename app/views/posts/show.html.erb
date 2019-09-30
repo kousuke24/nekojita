@@ -9,17 +9,25 @@
       <div class="col-sm-4">
         <div class="card-right mt-3">
           <div class="post-title text-center"><h3><%= @post.caption %></h3></div>
-            <% if user_signed_in? %>
+
+          <% if user_signed_in? %>
+            <div class="row">
+              <div id="like-icon-<%= @post.id.to_s %>">
+                <% if @post.liked_by(current_user).present? %>
+                  <%= link_to "お気に入り", post_like_path(@post.id, @post.liked_by(current_user)), method: :DELETE, remote: true, class: "btn btn-danger ml-3" %>
+                <% else %>
+                  <%= link_to "お気に入り", post_likes_path(@post), method: :POST, remote: true, class: "btn btn-light ml-3" %>
+                <% end %>
+              </div>
+
               <% if @post.user_id == current_user.id %>
-                <div class="button-delete">
-                <%= link_to post_path(@post), method: :delete, class: "btn btn-danger delete" do %>
+                <%= link_to post_path(@post), method: :delete, class: "btn btn-dark ml-2" do %>
                 <div>画像削除</div>
                 <% end %>
-                </div>
               <% end %>
-            <% end %>
-
-            <hr>
+            </div>
+          <% end %>
+          <hr>
 
           <h5 class="text-center m-3">投稿ユーザー</h5>
           <div class="text-center post-user">

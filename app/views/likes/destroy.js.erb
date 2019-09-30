@@ -1,0 +1,2 @@
+$('#like-icon-<%= @post.id.to_s %>').
+html('<%= link_to "お気に入り", post_likes_path(@post), method: :POST, remote: :true, class: "btn btn-light ml-3" %>');

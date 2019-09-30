@@ -1,0 +1,10 @@
+<div class="photos-parent text-center">
+  <h5><i class="fas fa-paw"></i> <%= @user.name %>の投稿画像</h5>
+  <% @post.each do |post| %>
+    <%= link_to(post_path(post)) do %>
+      <div class="photos-children">
+        <%= image_tag post.photos.first.image.url(:medium) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: 'users#show', as: :user
   patch '/users/:id', to: 'users#update'
+  delete '/users/:id', to: 'users#destroy', as: :user_destroy
 
   resources :posts, only: %i(new create show destroy) do
     resources :photos, only: %i(create)

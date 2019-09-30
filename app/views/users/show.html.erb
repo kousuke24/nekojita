@@ -14,14 +14,15 @@
   </div>
 
   <div class="offset-sm-4 col-sm-4 offset-sm-4 text-center">
-        <% if @user == current_user %>
-        <button type="button" class="btn btn-outline-secondary rounded-pill mt-3">
-          <%= f.file_field :image, accept: 'image/jpg,image/gif,image/png' %>
-        </button>
-          <%= f.submit 'プロフィール画像変更', class: 'btn btn-outline-dark mt-1 form-control' %>
-          <%= link_to "登録情報編集", edit_user_registration_path, class: "btn btn-secondary mt-3 form-control" %>
-        <% end %>
-        <br>
+    <% if @user == current_user %>
+      <button type="button" class="btn btn-outline-secondary rounded-pill mt-3">
+        <%= f.file_field :image, accept: 'image/jpg,image/gif,image/png' %>
+      </button>
+        <%= f.submit "プロフィール画像変更", class: 'btn btn-outline-dark mt-1 form-control' %>
+        <%= link_to "登録情報編集", edit_user_registration_path, class: "btn btn-secondary mt-3 form-control" %>
+        <%= link_to "退会", user_destroy_path, method: :delete, data: { confirm: "本当に退会しますか？" }, class: "btn btn-danger mt-3 form-control" %>
+      <% end %>
+      <br>
     <% end %>
   </div>
   <hr>
@@ -29,10 +30,22 @@
 </div>
 
 <div class="photos-parent text-center">
+  <h5><i class="fas fa-paw"></i> <%= @user.name %>の投稿画像</h5>
   <% @post.each do |post| %>
     <%= link_to(post_path(post)) do %>
       <div class="photos-children">
         <%= image_tag post.photos.first.image.url(:medium) %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="photos-parent text-center">
+  <h5><i class="fas fa-paw"></i> <%= @user.name %>のお気に入り画像</h5>
+  <% @like.each do |like| %>
+    <%= link_to(post_path(like.post)) do %>
+      <div class="photos-children">
+        <%= image_tag like.post.photos.first.image.url(:medium) %>
       </div>
     <% end %>
   <% end %>
