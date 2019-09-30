@@ -26,11 +26,10 @@
     <% end %>
   </div>
   <hr>
-
 </div>
 
 <div class="photos-parent text-center">
-  <h5><i class="fas fa-paw"></i> <%= @user.name %>の投稿画像</h5>
+  <h5 class="card-header"><i class="fas fa-paw"></i> <%= @user.name %>の投稿画像</h5>
   <% @post.each do |post| %>
     <%= link_to(post_path(post)) do %>
       <div class="photos-children">
@@ -41,7 +40,7 @@
 </div>
 
 <div class="photos-parent text-center">
-  <h5><i class="fas fa-paw"></i> <%= @user.name %>のお気に入り画像</h5>
+  <h5 class="card-header"><i class="fas fa-paw"></i> <%= @user.name %>のお気に入り画像</h5>
   <% @like.each do |like| %>
     <%= link_to(post_path(like.post)) do %>
       <div class="photos-children">

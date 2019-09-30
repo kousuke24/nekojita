@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
-    @post = @user.posts.order(id: "DESC").page(params[:page]).per(9)
-    @like = @user.likes.order(id: "DESC").page(params[:page]).per(9)
+    @post = @user.posts.order(id: "DESC").page(params[:page]).per(6)
+    @like = @user.likes.order(id: "DESC").page(params[:page]).per(6)
   end
 
   def edit
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       else
         flash.now[:danger] = 'プロフィール画像の変更に失敗しました'
       end
-      @post = @user.posts.order(id: "DESC").page(params[:page]).per(9)
+      @post = @user.posts.order(id: "DESC").page(params[:page]).per(6)
       render :show
     else
       redirect_to user_path
