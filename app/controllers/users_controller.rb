@@ -19,6 +19,7 @@ class UsersController < ApplicationController
         flash.now[:danger] = 'プロフィール画像の変更に失敗しました'
       end
       @post = @user.posts.order(id: "DESC").page(params[:page]).per(6)
+      @like = @user.likes.order(id: "DESC").page(params[:page]).per(6)
       render :show
     else
       redirect_to user_path
