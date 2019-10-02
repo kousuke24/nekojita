@@ -37,6 +37,12 @@
   <% end %>
 </div>
 
+<div class="paginate-parent">
+  <div class="paginate-children mt-3">
+    <%= paginate @post %>
+  </div>
+</div>
+
 <div class="photos-parent text-center">
   <h5 class="card-header"><i class="fas fa-paw"></i> <%= @user.name %>のお気に入り画像</h5>
   <% @like.each do |like| %>
@@ -50,6 +56,6 @@
 
 <div class="paginate-parent">
   <div class="paginate-children mt-3">
-    <%= paginate @post %>
+    <%= paginate @like %>
   </div>
 </div>
