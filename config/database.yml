@@ -83,3 +83,5 @@ production:
   database: nekojita_production
   username: nekojita
   password: <%= ENV['NEKOJITA_DATABASE_PASSWORD'] %>
+
+config.assets.initialize_on_precompile = false
