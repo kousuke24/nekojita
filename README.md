@@ -23,12 +23,12 @@ Rails 6.0.0
 postgres(PostgreSQL) 11.5
 
 * ライブラリ
-gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap'
 gem 'jquery-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails-i18n'
 gem 'omniauth'
